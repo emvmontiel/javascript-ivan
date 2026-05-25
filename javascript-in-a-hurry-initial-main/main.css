@@ -153,7 +153,7 @@ main .greeting-section .left-side h1 {
   font-weight: 600;
   font-size: 28px;
   line-height: 39px;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 main .greeting-section .left-side p {
   font-style: normal;
