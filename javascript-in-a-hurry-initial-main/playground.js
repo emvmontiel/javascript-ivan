@@ -5,30 +5,33 @@
 
 // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA TIME CHECK 16:40
 
-// document.getElementById("greeting").innerHTML = dynamicGreeting();
+document.getElementById("greeting").innerHTML = dynamicGreeting();
 
 function timeGreeting() {
     const date = new Date();
-    let hour = date.getHours();
-    let greeting = '';
-    switch (hour) {
-        case 5 <= hour <= 11:
-            greeting = 'Good Morning, ';
-            break;
-        case (12 <= hour <= 17):
-            greeting = 'Good Afternoon, ';
-            break;
-        case (18 <= hour <= 23):
-            greeting = 'Good Evening, ';
-            break;
-        default:
-            greeting = 'Hi there, night owl, ';
-            break;
+    const hour = date.getHours();
+    let goodDay = '';
+    if (5 <= hour && hour <= 11) {
+        goodDay = 'Good Morning, ';
+    } else if (12 <= hour && hour <= 17) {
+        goodDay = 'Good Afternoon, ';
+    } else if (18 <= hour && hour <= 23) {
+        goodDay = 'Good Evening, ';
     }
-    console.log(greeting)
-    console.log(hour)
-    console.log(typeof(hour))
-
+    return goodDay;
 }
 
-timeGreeting();
+function userGenerator(length = 6) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters.charAt(randomIndex);
+    }
+    return result;
+}
+
+function dynamicGreeting() {
+    const greeting = timeGreeting() + 'userX' + userGenerator() + '!';
+    return greeting;
+}
