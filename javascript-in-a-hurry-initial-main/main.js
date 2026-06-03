@@ -8,20 +8,17 @@ document.querySelector("#close-nav-menu").addEventListener("click", function(){
     document.querySelector("header nav .wrapper").classList.remove("nav-open");  
 });
 
-function celsiusToFahr(temperature) {
-    console.log(temperature)
-}
+// Dynamic Information Needed
+// Time of day
+// Current weather conditions
+// Location
+// Temperature
+// The weather is cloudy in London and it's 22°C outside. 
 
-// document.querySelector(".weather-group").addEventListener("click", function(e){ 
-//     if(e.target.id == "celsius")    {
-//         console.log("clicked the celsius");
-//     } else if ({
-
-//     }
-// }); 
-
-console.log("My age is " + 24);
-console.log("My age is ", 24);
-const age = 24;
-// console.log("My age is " + age);
-// console.log("My age is ", age);
+const greetingText = "Good Morning!";
+const weatherCondition = "sunny";
+const userLocation = "New York";
+let temperature = 22.8673;
+let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it's ${Math.floor(temperature)}°C outside.`
+document.querySelector("#greeting").innerHTML = greetingText;
+document.querySelector("p#weather").innerHTML = weatherText;
