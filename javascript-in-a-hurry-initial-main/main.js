@@ -100,3 +100,22 @@ lessons.forEach(function(lesson, index) {
     otherArray.push(lesson.title)
     console.log(otherArray)
 })
+
+const galleryImages = [
+    {
+        src: "./assets/gallery/image1.jpg",
+        alt: "Thumbnail Image 1"
+    },
+    {
+        src: "./assets/gallery/image2.jpg",
+        alt: "Thumbnail Image 2"
+    },
+    {
+        src: "./assets/gallery/image3.jpg",
+        alt: "Thumbnail Image 3"
+    }
+]
+
+let mainImage = document.querySelector("#gallery > img");
+mainImage.src = galleryImages[0].src;
+mainImage.alt = galleryImages[0].alt;
