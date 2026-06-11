@@ -67,3 +67,36 @@ for (a in bankAccounts) {
         console.log(bankAccounts[a])
     }
 }
+
+/* Consider the following array:
+
+Create a forEach loop that runs through the lessons array and populates another array, with the lesson names only.
+
+In the above case, this should be the value of the other array:
+
+["Variables", "Conditionals", "Functions"] */
+
+lessons = [
+    {
+        id: "273",
+        title: "Variables",
+        length: 12
+    },
+    {
+        id: "295",
+        title: "Conditionals",
+        length: 7
+    },
+    {
+        id: "299",
+        title: "Functions",
+        length: 9
+    }
+]; 
+
+let otherArray = []
+lessons.forEach(function(lesson, index) {
+    // console.log(lesson.title)
+    otherArray.push(lesson.title)
+    console.log(otherArray)
+})
