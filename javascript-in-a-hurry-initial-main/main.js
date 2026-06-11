@@ -37,3 +37,13 @@ document.querySelector(".weather-group").addEventListener("click", function(e) {
     }
     document.querySelector("p#weather").innerHTML = weatherText;
 });
+
+
+setInterval(function() {
+    // for CSS selectors, you may use square brackets to target specific attributes
+    // you could also use the .textContent instead of .innerHTML when you are only dealing with text and not HTML code
+    document.querySelector('[data-time="hours"]').innerHTML = new Date().getHours().toString().padStart(2, "0");
+    document.querySelector('[data-time="minutes"]').innerHTML = new Date().getMinutes().toString().padStart(2, "0");
+    document.querySelector('[data-time="seconds"]').innerHTML = new Date().getSeconds().toString().padStart(2, "0");
+}, 1000
+)
