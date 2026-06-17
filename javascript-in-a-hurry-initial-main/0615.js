@@ -128,11 +128,24 @@ let thumbnails = document.querySelector("#gallery .thumbnails");
 
 galleryImages.forEach(function(image, index) {
 	let thumb = document.createElement("img");
-	thumb.src = image.src; 
+	thumb.src = image.src;
 	thumb.alt = image.alt;
 
     // the dataset property provides direct read and write access to all custom data attributes (data-*) defined on an HTML element
 	thumb.dataset.arrayIndex = index; // creates an HTML attribute called data-array-index
 	thumb.dataset.selected = index === 0 ? true : false; // creates an HTML attribute called data-selected
+
+    // Jun 17 2025 10:04
+
+    thumb.addEventListener("click", function(e) {
+        let selectedIndex = e.target.dataset.arrayIndex;
+        let selectedImage = galleryImages[selectedIndex];
+        mainImage.src = selectedImage.src;
+        mainImage.alt = selectedImage.alt;
+        thumbnails.querySelectorAll("img").forEach(function(img) {
+            img.dataset.selected = false;
+        });
+        e.target.dataset.selected = true;
+    })
     thumbnails.appendChild(thumb)
 	});
