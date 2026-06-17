@@ -45,8 +45,7 @@ setInterval(function() {
     document.querySelector('[data-time="hours"]').innerHTML = new Date().getHours().toString().padStart(2, "0");
     document.querySelector('[data-time="minutes"]').innerHTML = new Date().getMinutes().toString().padStart(2, "0");
     document.querySelector('[data-time="seconds"]').innerHTML = new Date().getSeconds().toString().padStart(2, "0");
-}, 1000
-)
+}, 1000)
 
 /* Consider the following array:
 
