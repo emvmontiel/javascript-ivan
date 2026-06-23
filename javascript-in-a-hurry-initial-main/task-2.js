@@ -50,6 +50,19 @@ galleryImages.forEach(function(image, index) {
     thumb.src = image.src;
     thumb.alt = image.alt;
     thumb.dataset.arrayIndex = index;
-    thumb.dataset.selected = true;
+    thumb.dataset.selected = index === 0 ? true : false;
+
+    // Jun 23 2026 08:46
+    
+    thumb.addEventListener("click", function(e) {
+        let selectedIndex = e.target.dataset.arrayIndex;
+        let selectedImage = galleryImages[selectedIndex];
+        mainImage.src = selectedImage.src;
+        mainImage.alt = selectedImage.alt;
+        thumbnails.querySelectorAll("img").forEach(function(img) {
+            img.dataset.selected = false;
+        })
+        e.target.dataset.selected = true;
+    })
     thumbnails.appendChild(thumb)
 });
