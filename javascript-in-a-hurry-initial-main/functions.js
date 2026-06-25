@@ -148,6 +148,31 @@ function galleryHandler() {
 // Products Section
 function productHandler() {
 
+    let productsSection = document.querySelector(".products-area")
+
+    products.forEach(function(product, index) {
+        let productElm = document.createElement("div")
+        productElm.classList.add("product-item")
+
+        let productImage = document.createElement("img");
+        productImage.src = product.image
+        productImage.alt = "Image for" + product.title
+
+        let productDetails = document.createElement("div")
+        productDetails.classList.add("product-details")
+        
+        let productTitle = document.createElement("h3")
+        productTitle.classList.add("product-title")
+        
+        let productAuthor = document.createElement("p")
+        productAuthor.classList.add("product-author")
+        
+        let priceTitle = document.createElement("p")
+        priceTitle.classList.add("price-title")
+        
+        let productPrice = document.createElement("p")
+        productPrice.classList.add("product-price")
+    })
 }
 
 menuHandler()
