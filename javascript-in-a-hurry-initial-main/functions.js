@@ -137,10 +137,10 @@ function galleryHandler() {
 <div class="product-item">
     <img src="./assets/products/img6.png" alt="AstroFiction">
     <div class="product-details">
-    <h3 class="product-title">AstroFiction</h3>
-    <p class="product-author">John Doe</p>
-    <p class="price-title">Price</p>
-    <p class="product-price">$ 49.90</p>
+        <h3 class="product-title">AstroFiction</h3>
+        <p class="product-author">John Doe</p>
+        <p class="price-title">Price</p>
+        <p class="product-price">$ 49.90</p>
     </div>
 </div> 
 */
@@ -148,28 +148,51 @@ function galleryHandler() {
 // Products Section
 function productHandler() {
 
+    // Selects the HTML element hardcoded in the HTML file
     let productsSection = document.querySelector(".products-area")
 
+    // Runs a loop for each item of the products array
     products.forEach(function(product, index) {
+
+        // Creates the parent element of the product item
         let productElm = document.createElement("div")
         productElm.classList.add("product-item")
 
+        // Creates an image HTML element
         let productImage = document.createElement("img");
         productImage.src = product.image
-        productImage.alt = "Image for" + product.title
+        productImage.alt = product.title
 
+        // 
         let productDetails = document.createElement("div")
         productDetails.classList.add("product-details")
         
+        // Add child HTML elements to the parent
+        productElm.append(productImage)
+        productElm.append(productDetails)
+        
+        // 
         let productTitle = document.createElement("h3")
         productTitle.classList.add("product-title")
+        productTitle.textContent = product.title
         
+        // 
         let productAuthor = document.createElement("p")
         productAuthor.classList.add("product-author")
+        productAuthor.textContent = product.author
         
+        productDetails.append(productTitle)
+        productDetails.append(productAuthor)
+        
+
+        // Add parent HTML element along with its children or the product item to the products area
+        productsSection.append(productElm)
+        
+        // 
         let priceTitle = document.createElement("p")
         priceTitle.classList.add("price-title")
         
+        // 
         let productPrice = document.createElement("p")
         productPrice.classList.add("product-price")
     })
